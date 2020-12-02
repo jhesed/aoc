@@ -11,7 +11,7 @@ def compute_product_of_targets(inputs: list, target: int = 2020) -> int:
     """
     for counter, first_candidate in enumerate(inputs):
         try:
-            for second_candidate in inputs[counter + 1:]:
+            for second_candidate in inputs[counter + 1 :]:
                 if first_candidate + second_candidate == target:
                     print(f"FIRST number: {first_candidate}")
                     print(f"SECONDS number: {second_candidate}")

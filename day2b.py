@@ -1,11 +1,35 @@
 """
     Created by Jhesed Tacadena Dec 01, 2020
+
+    Advent of Code Day 2: https://adventofcode.com/2020/day/2
 """
 
 
-def x():
-    pass
+def count_valid_passwords(inputs: list) -> int:
+    """ Counts valid password based on rules"""
+    counter = 0
+    for line in inputs:
+        rule, character, password = line.split()
+        first_index, last_index = rule.split("-")
+        first_index = int(first_index)
+        last_index = int(last_index)
+        character = character.replace(":", "")
+
+        _occurrence = 0
+
+        if password[first_index - 1] == character:
+            _occurrence += 1
+        if password[last_index - 1] == character:
+            _occurrence += 1
+
+        # Character should appear only once in both indices
+        if _occurrence == 1:
+            counter += 1
+
+    return counter
 
 
 if __name__ == "__main__":
-    pass
+    with open("data/day2.txt", "r") as _file:
+        _inputs = _file.read().splitlines()
+        print(f"ANSWER: {count_valid_passwords(inputs=_inputs)}")
