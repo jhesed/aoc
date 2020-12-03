@@ -1,5 +1,5 @@
 """
-    Created by Jhesed Tacadena Dec 01, 2020
+    Created by Jhesed Tacadena Dec 02, 2020
 
     Advent of Code Day 2: https://adventofcode.com/2020/day/2
 """
@@ -11,19 +11,11 @@ def count_valid_passwords(inputs: list) -> int:
     for line in inputs:
         rule, character, password = line.split()
         first_index, last_index = rule.split("-")
-        first_index = int(first_index)
-        last_index = int(last_index)
-        character = character.replace(":", "")
+        character = character.replace(":", "")  # may also be just character[0]
 
-        _occurrence = 0
-
-        if password[first_index - 1] == character:
-            _occurrence += 1
-        if password[last_index - 1] == character:
-            _occurrence += 1
-
-        # Character should appear only once in both indices
-        if _occurrence == 1:
+        if (password[int(first_index) - 1] == character) ^ (
+            password[int(last_index) - 1] == character
+        ):
             counter += 1
 
     return counter
