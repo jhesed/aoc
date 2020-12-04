@@ -2,6 +2,9 @@
     Created by Jhesed Tacadena Dec 02, 2020
 
     Advent of Code Day 2: https://adventofcode.com/2020/day/2
+
+    Output:
+        ANSWER: 489
 """
 
 
@@ -22,6 +25,6 @@ def count_valid_passwords(inputs: list) -> int:
 
 
 if __name__ == "__main__":
-    with open("data/day2.txt", "r") as _file:
+    with open("data.txt", "r") as _file:
         _inputs = _file.read().splitlines()
         print(f"ANSWER: {count_valid_passwords(inputs=_inputs)}")
