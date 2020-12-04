@@ -1,27 +1,26 @@
-"""
-    Created by Jhesed Tacadena Dec 03, 2020
+"""Created by Jhesed Tacadena Dec 03, 2020.
 
-    Advent of Code Day 3: https://adventofcode.com/2020/day/3
+Advent of Code Day 3: https://adventofcode.com/2020/day/3
 
-    Output:
-        [0] Trees: 61
-        [1] Trees: 257
-        [2] Trees: 64
-        [3] Trees: 47
-        [4] Trees: 37
-        Product: 1744787392
+Output:
+    [0] Trees: 61
+    [1] Trees: 257
+    [2] Trees: 64
+    [3] Trees: 47
+    [4] Trees: 37
+    Product: 1744787392
 """
 
 TREE = "#"
 
 RULES = [
     # RIGHT, DOWN
-    (3, 1),
+    (3, 1)
 ]
 
 
 def count_trees(inputs: list, right: int, down: int) -> int:
-    """Counts number of trees (e.g. #) in matrix"""
+    """Counts number of trees (e.g. #) in matrix."""
 
     trees = 0
     current_right = 0

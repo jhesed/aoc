@@ -1,18 +1,16 @@
-"""
-    Created by Jhesed Tacadena Dec 01, 2020
+"""Created by Jhesed Tacadena Dec 01, 2020.
 
-    Output:
-        FIRST number value:  912
-        SECOND number value:  977
-        THIRD number value:  131
-        ANSWER: 116724144
+Output:
+    FIRST number value:  912
+    SECOND number value:  977
+    THIRD number value:  131
+    ANSWER: 116724144
 """
 
 
 def compute_product_of_targets(inputs: list, target: int = 2020) -> int:
-    """
-    Finds 2 targets in list where sum is 2020 and calculate their product.
-    """
+    """Finds 2 targets in list where sum is 2020 and calculate their
+    product."""
     try:
         for counter, first_candidate in enumerate(inputs):
             for counter2, second_candidate in enumerate(inputs[counter:]):

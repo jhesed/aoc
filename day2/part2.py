@@ -1,15 +1,14 @@
-"""
-    Created by Jhesed Tacadena Dec 02, 2020
+"""Created by Jhesed Tacadena Dec 02, 2020.
 
-    Advent of Code Day 2: https://adventofcode.com/2020/day/2
+Advent of Code Day 2: https://adventofcode.com/2020/day/2
 
-    Output:
-        ANSWER: 489
+Output:
+    ANSWER: 489
 """
 
 
 def count_valid_passwords(inputs: list) -> int:
-    """ Counts valid password based on rules"""
+    """Counts valid password based on rules."""
     counter = 0
     for line in inputs:
         rule, character, password = line.split()

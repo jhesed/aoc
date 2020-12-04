@@ -1,19 +1,17 @@
-"""
-    Created by Jhesed Tacadena Dec 01, 2020
+"""Created by Jhesed Tacadena Dec 01, 2020.
 
-    Advent of Code Day 1: https://adventofcode.com/2020/day/1
+Advent of Code Day 1: https://adventofcode.com/2020/day/1
 
-    Output:
-        FIRST number: 679
-        SECOND number: 1341
-        ANSWER: 910539
+Output:
+    FIRST number: 679
+    SECOND number: 1341
+    ANSWER: 910539
 """
 
 
 def compute_product_of_targets(inputs: list, target: int = 2020) -> int:
-    """
-    Finds 2 targets in list where sum is 2020 and calculate their product.
-    """
+    """Finds 2 targets in list where sum is 2020 and calculate their
+    product."""
     for counter, first_candidate in enumerate(inputs):
         try:
             for second_candidate in inputs[counter + 1 :]:
