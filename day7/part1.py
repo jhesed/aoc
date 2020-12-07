@@ -25,7 +25,7 @@ def count_bags_with_shiny_gold(
     :param item_to_find: e.g. `shiny gold`
     """
     count = 0
-    for rule in list(rules):
+    for rule in rules.keys():
         for colored_bag in rules[rule]:
             if item_to_find in colored_bag and not any(
                 DONE_FLAG in colored_bag for colored_bag in rules[rule]

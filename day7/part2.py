@@ -5,7 +5,6 @@ Advent of Code Day 7: https://adventofcode.com/2020/day/7
 Output:
     Total Shiny Objects: 5956
 """
-from tkinter.messagebox import IGNORE
 
 from day7.common import ITEM_TO_FIND, generate_rules
 
@@ -28,16 +27,21 @@ def count_total_bags_required_for_shiny_gold(
     """
     count = 0
     for bag in rules[item_to_find]:
-        if bag != IGNORE:
-            # Example bag: 5 muted orange
+
+        # Example bag: 5 muted orange
+
+        try:
             bag_count = int(bag[0])  # e.g. 5
-            next_key = bag[2:]  # e.g. muted orange
-            count += bag_count * (
-                1
-                + count_total_bags_required_for_shiny_gold(
-                    rules=rules, item_to_find=next_key
-                )
+        except ValueError:
+            continue  # e.g. bag[0] == "no other bags"
+
+        next_key = bag[2:]  # e.g. muted orange
+        count += bag_count * (
+            1
+            + count_total_bags_required_for_shiny_gold(
+                rules=rules, item_to_find=next_key
             )
+        )
     return count
 
 
