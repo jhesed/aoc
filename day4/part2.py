@@ -31,7 +31,7 @@ VALIDATION_FACTORY = {
 
 
 def count_valid_passports(inputs: list) -> int:
-    """Counts number of valid passports"""
+    """Counts number of valid passports."""
     counter = 0
 
     for line in inputs:
