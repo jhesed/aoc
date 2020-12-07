@@ -3,8 +3,10 @@
 Advent of Code Day 5: https://adventofcode.com/2020/day/5
 
 Output:
+    My Seat ID: 696
+    Maximum Seat ID: 938
 """
-from math import floor, ceil
+from math import ceil, floor
 
 MIN_ROW = 0
 MAX_ROW = 127
@@ -16,7 +18,7 @@ MULTIPLIER = 8
 
 
 def count_x(inputs: list) -> int:
-    """Counts x """
+    """Counts x."""
 
     seat_ids = []
     max_current_seat_id = 0
@@ -69,4 +71,4 @@ def count_x(inputs: list) -> int:
 if __name__ == "__main__":
     with open("data.txt", "r") as _file:
         _inputs = _file.read().splitlines()
-        print(f"ANSWER: {count_x(inputs=_inputs)}")
+        print(f"Maximum Seat ID: {count_x(inputs=_inputs)}")
