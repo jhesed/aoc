@@ -14,7 +14,7 @@ def count_unique_answers(inputs: list) -> int:
     return reduce(reduction_rule, inputs, 0)
 
 
-def reduction_rule(current_total, current_line: str) -> int:
+def reduction_rule(current_total: int, current_line: str) -> int:
     """Counts unique answers in a group of people and sum them from another
     group of people.
 

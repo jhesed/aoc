@@ -10,5 +10,8 @@ These solutions are not the original ones submitted, as it is time-pressured.
 I already edited it, e.g. added docstrings, etc. before pushing them
 in this repository
 
+## Minimum Python Version
+`python3.8` (e.g. used `Walrus operator` in some days)
+
 ## Maintainer
 Jhesed D. Tacadena

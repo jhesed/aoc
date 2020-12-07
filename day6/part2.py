@@ -14,7 +14,7 @@ def count_unique_answers(inputs: list) -> int:
     return reduce(count_total_same_answers, inputs, 0)
 
 
-def count_total_same_answers(current_total, current_line: str) -> int:
+def count_total_same_answers(current_total: int, current_line: str) -> int:
     """Counts total number of same answers for all groups. Refer to part1 for
     more sample.
 
