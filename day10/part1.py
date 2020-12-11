@@ -5,11 +5,17 @@ Advent of Code Day 10: https://adventofcode.com/2020/day/10
 Output:
     Answer: 2812
 """
-from day10.common import ACCEPTABLE_DIFF, BUILT_IN_ADAPTER_MARGIN, START_POINT
+from day10.common import (
+    ACCEPTABLE_DIFF,
+    BUILT_IN_ADAPTER_MARGIN,
+    START_POINT,
+    compute_product,
+    get_max_joltage,
+)
 
 
-def compute_product_of_joltages(inputs: list) -> int:
-    """TODO."""
+def find_joltages(inputs: list) -> int:
+    """Compute product of joltages."""
     built_in_adapter_joltage = (
         get_max_joltage(inputs=inputs) + BUILT_IN_ADAPTER_MARGIN
     )
@@ -26,23 +32,11 @@ def compute_product_of_joltages(inputs: list) -> int:
 
             answers[diff].append(joltage)
             previous_joltage = joltage
-
-    print(answers)
-    product = 1
-    for diff, values in answers.items():
-        print(f"[{diff}] {len(values)}")
-        product *= len(values)
-    # print(built_in_adapter_joltage)
-    print(f"answer: {product} ")
-
-
-def get_max_joltage(inputs: list) -> int:
-    return max([int(i) for i in inputs])
+    return compute_product(joltages=answers)
 
 
 if __name__ == "__main__":
     with open("data.txt", "r") as _file:
         _inputs = sorted([int(i) for i in _file.read().splitlines()])
-        print(_inputs)
-        answer = compute_product_of_joltages(_inputs)
+        answer = find_joltages(inputs=_inputs)
         print(f"Answer: {answer}")

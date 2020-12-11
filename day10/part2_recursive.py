@@ -6,17 +6,9 @@ Output:
 
 Answer: 386869246296064
 """
-from day10.common import ACCEPTABLE_DIFF
+import time
 
-
-def generate_unique_key(joltage: int):
-    """Simply generates a string of key to avoid collision with other numbers
-    in e.g. the dictionary.
-
-    :param joltage: e.g. 10
-    :return: e.g. KEY10
-    """
-    return f"KEY{joltage}"
+from day10.common import ACCEPTABLE_DIFF, generate_unique_key
 
 
 def count_number_of_ways(
@@ -57,6 +49,7 @@ def count_number_of_ways(
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     with open("data.txt", "r") as _file:
         _inputs = sorted([int(i) for i in _file.read().splitlines()])
         _max_value = max(_inputs)
@@ -69,3 +62,5 @@ if __name__ == "__main__":
             max_value=_max_value,
         )
         print(f"Answer: {answer}")
+    end_time = time.time()
+    print(f"Elapsed time (seconds): {end_time-start_time}")

@@ -22,10 +22,12 @@ def find_all_jmp_indexes(inputs: list) -> list:
 
 def find_incorrect_jmp_value_and_compute_total_acc(
     inputs: list, jump_index
-) -> int:
+) -> tuple:
     """There's a bug in the code, e.g. one jmp value must be updated to nop.
 
     The terminating condition is that is should reach the end of file.
+
+    :returns: e.g. (is_found (bool), total_accumulated_value (int))
     """
 
     total_acc = 0
@@ -37,12 +39,11 @@ def find_incorrect_jmp_value_and_compute_total_acc(
         # Terminating conditions
         if len(inputs) == current_line_index:
             print(f"DONE. Got last line")
-            print(total_acc)
-            return True
+            return True, total_acc
 
         if current_line_index in visited_indexes:
             print(f"DONE. INCORRECT guess.")
-            return False
+            return False, total_acc
         else:
             visited_indexes.append(current_line_index)
 
@@ -70,9 +71,9 @@ if __name__ == "__main__":
 
         jump_indexes = find_all_jmp_indexes(inputs=_inputs)
         for _index in jump_indexes:
-            answer = find_incorrect_jmp_value_and_compute_total_acc(
+            is_found, total = find_incorrect_jmp_value_and_compute_total_acc(
                 inputs=_inputs, jump_index=_index
             )
-            if answer is True:
-                print("FOUND!!!!")
+            if is_found is True:
+                print(f"Found: {total}")
                 break
