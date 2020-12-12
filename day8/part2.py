@@ -38,11 +38,11 @@ def find_incorrect_jmp_value_and_compute_total_acc(
 
         # Terminating conditions
         if len(inputs) == current_line_index:
-            print(f"DONE. Got last line")
+            print("DONE. Got last line")
             return True, total_acc
 
         if current_line_index in visited_indexes:
-            print(f"DONE. INCORRECT guess.")
+            print("DONE. INCORRECT guess.")
             return False, total_acc
         else:
             visited_indexes.append(current_line_index)
