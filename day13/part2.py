@@ -11,14 +11,14 @@ from collections import OrderedDict
 from functools import reduce
 from math import gcd
 
-EXCLUDE = "x"
+from day13.common import EXCLUDE
 
 
 def compute_lcm(numbers: list) -> int:
-    """
-    Computes LCM of multiple numbers.
-    # TODO: Turns out I only need to support 2 numbers;
-    #       But this initial version supports multiple numbers
+    """Computes LCM of multiple numbers.
+
+    # TODO: Turns out I only need to support 2 numbers; #       But this
+    initial version supports multiple numbers
     """
     return reduce(
         lambda previous_number, next_number: previous_number
@@ -29,9 +29,8 @@ def compute_lcm(numbers: list) -> int:
 
 
 def find_earliest_timestamp(inputs: list) -> int:
-    """Finds the earliest timestamp such that all of the listed
-    bus IDs depart at
-    offsets matching their positions in the list."""
+    """Finds the earliest timestamp such that all of the listed bus IDs depart
+    at offsets matching their positions in the list."""
 
     # Get bus numbers
     bus_numbers = inputs[1].split(",")
