@@ -4,6 +4,7 @@ Advent of Code Day 15: https://adventofcode.com/2020/day/15
 
 Output:
     # TODO: LOTS OF ROOM FOR OPTIMIZATION!!!!  TOO SLOW!!!
+            DON'T USE DEQUE! It might be causing the slow down!
     Answer: 955
     Elapsed time (seconds): 22.818878889083862
 """
