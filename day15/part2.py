@@ -5,7 +5,7 @@ Advent of Code Day 15: https://adventofcode.com/2020/day/15
 Output:
     # TODO: LOTS OF ROOM FOR OPTIMIZATION!!!!  TOO SLOW!!!
     Answer: 955
-    Elapsed time (seconds): 24.871059894561768
+    Elapsed time (seconds): 22.818878889083862
 """
 import time
 from collections import deque
@@ -13,6 +13,7 @@ from collections import deque
 START_TURN = 1
 END_TURN = 30000000
 UNSEEN_VALUE = 0
+MAX_DEQUE_LEN = 2
 
 
 def compute_x(inputs: list) -> int:
@@ -32,7 +33,7 @@ def compute_x(inputs: list) -> int:
 
     # Iterate over initial values:
     for index, number in enumerate(initial_values):
-        seen[number] = deque([current_turn])
+        seen[number] = deque([current_turn], maxlen=MAX_DEQUE_LEN)
         current_turn += 1
 
     current_value = initial_values[-1]
@@ -49,13 +50,9 @@ def compute_x(inputs: list) -> int:
 
         # Append indexes to the right coordinate
         if not seen.get(current_value):
-            seen[current_value] = deque([current_turn])
+            seen[current_value] = deque([current_turn], maxlen=MAX_DEQUE_LEN)
         else:
             seen[current_value].append(current_turn)
-
-        # Maintain only 2 indexes
-        if len(seen[current_value]) > 2:
-            seen[current_value].popleft()
 
         # print(f"Turn {current_turn}; Current Value: {current_value}; Seen: {seen}")
 
