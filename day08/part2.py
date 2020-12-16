@@ -5,7 +5,7 @@ Advent of Code Day 8: https://adventofcode.com/2020/day/8
 Output:
     answer: 758
 """
-from day8.common import ACCUMULATE, JUMP, NO_OPERATION
+from day08.common import ACCUMULATE, JUMP, NO_OPERATION
 
 
 def find_all_jmp_indexes(inputs: list) -> list:

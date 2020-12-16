@@ -5,7 +5,7 @@ Advent of Code Day 8: https://adventofcode.com/2020/day/8
 Output:
     answer: 1594
 """
-from day8.common import ACCUMULATE, JUMP
+from day08.common import ACCUMULATE, JUMP
 
 
 def compute_total_acc_before_second_execution(inputs: list) -> int:

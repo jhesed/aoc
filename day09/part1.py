@@ -5,7 +5,7 @@ Advent of Code Day 9: https://adventofcode.com/2020/day/9
 Output:
     Answer: 133015568
 """
-from day9.common import PREAMBLE
+from day09.common import PREAMBLE
 
 
 def find_number(inputs: list) -> int:

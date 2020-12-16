@@ -5,7 +5,7 @@ Advent of Code Day 7: https://adventofcode.com/2020/day/7
 Output:
     Total Shiny Objects: 144
 """
-from day7.common import DONE_FLAG, ITEM_TO_FIND, generate_rules
+from day07.common import DONE_FLAG, ITEM_TO_FIND, generate_rules
 
 
 def count_bags_with_shiny_gold(

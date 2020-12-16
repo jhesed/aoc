@@ -25,7 +25,6 @@ def compute_product_of_targets(inputs: list, target: int = 2020) -> int:
 
 
 if __name__ == "__main__":
-
     with open("data.txt", "r") as _file:
         day1_inputs = list(map(int, _file.read().splitlines()))
         print(f"ANSWER: {compute_product_of_targets(inputs=day1_inputs)}")

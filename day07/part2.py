@@ -6,7 +6,7 @@ Output:
     Total Shiny Objects: 5956
 """
 
-from day7.common import ITEM_TO_FIND, generate_rules
+from day07.common import ITEM_TO_FIND, generate_rules
 
 
 def count_total_bags_required_for_shiny_gold(

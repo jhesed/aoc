@@ -8,7 +8,7 @@ Output:
         7999555, 8416737, 8604840, 9458140]
     Sum of min and max: 16107959
 """
-from day9.part1 import find_number
+from day09.part1 import find_number
 
 
 def find_contiguous(inputs: list, target: int) -> list:
