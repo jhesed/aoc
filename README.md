@@ -16,5 +16,8 @@ Will do so when I have time. (so might be never. lols. hehe)
 ## Minimum Python Version (For 2020)
 `python3.8` (e.g. used `Walrus operator` in some days)
 
+## AOC 2021
+* Requires node JS (I'm not a JS developer. Pardon my messy code. lols)
+
 ## Maintainer
 _Jhesed D. Tacadena_
