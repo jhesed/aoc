@@ -1,5 +1,5 @@
 ## About
-*AOC 2020* is just a repository to store my *Advent of Code* Solutions
+*AOC* is just a repository to store my *Advent of Code* Solutions
 for future usage.
 
 ## Advent of Code Website
@@ -13,7 +13,7 @@ in this repository.
 Although a lot of them has to be further optimized due to running time.
 Will do so when I have time. (so might be never. lols. hehe)
 
-## Minimum Python Version
+## Minimum Python Version (For 2020)
 `python3.8` (e.g. used `Walrus operator` in some days)
 
 ## Maintainer
