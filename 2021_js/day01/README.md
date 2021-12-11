@@ -1,7 +1,3 @@
-Advent of Code[About][Events][Shop][Settings][Log Out]jhesed 2*
-  {:year 2021}[Calendar][AoC++][Sponsors][Leaderboard][Stats]
-Our sponsors help make Advent of Code possible:
-Spotify - Follow our engineering blog to see how our developers solve complex tech problems, at scale, every day.
 --- Day 1: Sonar Sweep ---
 You're minding your own business on a ship at sea when the overboard alarm goes off! You rush to see if you can help. Apparently, one of the Elves tripped and accidentally sent the sleigh keys flying into the ocean!
 
@@ -81,10 +77,3 @@ H: 792 (increased)
 In this example, there are 5 sums that are larger than the previous sum.
 
 Consider sums of a three-measurement sliding window. How many sums are larger than the previous sum?
-
-Answer:
-
-
-Although it hasn't changed, you can still get your puzzle input.
-
-You can also [Share] this puzzle.
