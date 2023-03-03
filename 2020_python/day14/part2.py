@@ -53,7 +53,7 @@ def generate_bit_combinations(masked_binary_value_mem_name: str) -> list:
     list_value = list(masked_binary_value_mem_name)
     floating_indexes = [i for i, x in enumerate(list_value) if x == FLOATING]
     floating_count = len(floating_indexes)
-    combination_count = 2 ** floating_count
+    combination_count = 2**floating_count
 
     comb = uniq_comb(BITS * combination_count, r=floating_count)
 

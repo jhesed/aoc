@@ -40,15 +40,19 @@ def build_matrix(string_content: str) -> array:
 
 
 def get_adjacent_seat_coordinates(
-    row_index: int, col_index: int, matrix_height: int, matrix_width: int, distance: int=1
+    row_index: int,
+    col_index: int,
+    matrix_height: int,
+    matrix_width: int,
+    distance: int = 1,
 ) -> dict:
     """
     Ordering: up, down, left, right, diagonal up left, diagonal up right,
             diagonal down left, diagonal down right
     """
-    U = row_index-distance if row_index-distance >= 0 else None
-    D = row_index+distance if row_index+distance < matrix_height else None
-    L = col_index-distance if col_index-distance >=0 else None
+    U = row_index - distance if row_index - distance >= 0 else None
+    D = row_index + distance if row_index + distance < matrix_height else None
+    L = col_index - distance if col_index - distance >= 0 else None
     R = col_index + distance if col_index + distance < matrix_width else None
 
     adjacents = {
@@ -56,17 +60,18 @@ def get_adjacent_seat_coordinates(
         DOWN: (D, col_index),
         LEFT: (row_index, L),
         RIGHT: (row_index, R),
-
         # Diagonals
         DIAGONAL_UP_LEFT: (U, L),
         DIAGONAL_UP_RIGHT: (U, R),
         DIAGONAL_DOWN_LEFT: (D, L),
-        DIAGONAL_DOWN_RIGHT: (D, R)
+        DIAGONAL_DOWN_RIGHT: (D, R),
     }
     return adjacents
 
 
-def get_seat_values(matrix: array, adjacent_coordinates: dict, seat_values) -> dict:
+def get_seat_values(
+    matrix: array, adjacent_coordinates: dict, seat_values
+) -> dict:
     """
     None = no seat at all in adjacent
     L = Empty seat
@@ -77,10 +82,14 @@ def get_seat_values(matrix: array, adjacent_coordinates: dict, seat_values) -> d
             if None in coordinate:
                 # seat_values[direction] = None
                 pass
-            elif (seat:=matrix[coordinate[0]][coordinate[1]]) in (OCCUPIED_SEAT, EMPTY_SEAT):
+            elif (seat := matrix[coordinate[0]][coordinate[1]]) in (
+                OCCUPIED_SEAT,
+                EMPTY_SEAT,
+            ):
                 seat_values[direction] = seat
 
     return seat_values
+
 
 def rearrange_seats(matrix: array):
     """TODO."""
@@ -94,15 +103,26 @@ def rearrange_seats(matrix: array):
         for col_index, col_scalar in enumerate(row):
             seat_values = {}
             distance = 1
-            while len(seat_values.keys()) < DIRECTION_LENGTH and distance < height:
-                adjacents = get_adjacent_seat_coordinates(row_index, col_index, height, width, distance=distance)
+            while (
+                len(seat_values.keys()) < DIRECTION_LENGTH
+                and distance < height
+            ):
+                adjacents = get_adjacent_seat_coordinates(
+                    row_index, col_index, height, width, distance=distance
+                )
                 seat_values = get_seat_values(matrix, adjacents, seat_values)
                 distance += 1
 
             # Rearrange seats
-            if col_scalar == EMPTY_SEAT and all(v != OCCUPIED_SEAT for v in seat_values.values()):
+            if col_scalar == EMPTY_SEAT and all(
+                v != OCCUPIED_SEAT for v in seat_values.values()
+            ):
                 updated_matrix[row_index][col_index] = OCCUPIED_SEAT
-            elif col_scalar == OCCUPIED_SEAT and sum(v == OCCUPIED_SEAT for v in seat_values.values()) >= THRESHOLD:
+            elif (
+                col_scalar == OCCUPIED_SEAT
+                and sum(v == OCCUPIED_SEAT for v in seat_values.values())
+                >= THRESHOLD
+            ):
                 updated_matrix[row_index][col_index] = EMPTY_SEAT
             elif col_scalar == FLOOR:
                 updated_matrix[row_index][col_index] = FLOOR
